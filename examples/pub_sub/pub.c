@@ -13,6 +13,7 @@ int main(void)
     while (1)
     {
         zmq_send(publisher, "A", strlen("A"), 0);
+        zmq_send(publisher, "ABC", strlen("ABC"), 0);
         zmq_send(publisher, "B", strlen("B"), 0);
         sleep(1);
     }
