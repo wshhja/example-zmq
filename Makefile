@@ -1,4 +1,4 @@
-all: version_check req_rep pub_sub
+all: version_check req_rep pub_sub poller
 
 version_check: examples/version_check/version_check.c
 	gcc examples/version_check/version_check.c -o version_check.out -lzmq
@@ -13,7 +13,10 @@ pub_sub: examples/pub_sub/pub.c examples/pub_sub/sub.c examples/pub_sub/sub_a.c 
 	gcc examples/pub_sub/sub_a.c -o sub_a.out -lzmq
 	gcc examples/pub_sub/sub_b.c -o sub_b.out -lzmq
 
+poller: examples/poller/poller.c
+	gcc examples/poller/poller.c -o poller.out -lzmq
+
 clean:
 	rm *.out
 
-.PHONY: clean version_check req_rep pub_sub
+.PHONY: clean version_check req_rep pub_sub poller
