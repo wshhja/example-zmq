@@ -3,7 +3,7 @@
 #include <unistd.h>
 
 #include <zmq.h>
-#include "../zhelpler.h"
+#include "../zhelper.h"
 
 int main(void)
 {
